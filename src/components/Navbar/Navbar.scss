@@ -1,0 +1,96 @@
+$primary-color:#002451;
+$secondary-color:#0a2353;
+
+.navbar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $primary-color;
+    color: white;
+    position: sticky;
+    top: 0;
+
+    &.active{
+        background-color: white;
+        color: black;
+    }
+    .container{
+        width: 1400px;
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 0;
+
+        .logo{
+            font-size: 34px;
+            font-weight: bold;
+            .dot{
+                color: $secondary-color;
+            }
+        }
+
+        .links{
+            display: flex;
+            gap: 24px;
+            align-items: center;
+            font-weight: 500;
+            button{
+                color: white;
+                padding: 10px 20px;
+                border-radius: 5px;
+                border: 1px solid white;
+                cursor: pointer;
+                background-color: transparent;
+
+                &:hover{
+                    background-color: rgb(59, 59, 175);
+                    border-color: transparent;
+                    color: white;
+                }
+            }
+
+            .user{
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                position: relative;
+
+                &-icon{
+                    color:cadetblue;
+                    cursor: pointer;
+                }
+
+                .options{
+                    position: absolute;
+                    top: 50px;
+                    right: 0;
+                    padding: 20px;
+                    color: gray;
+                    background-color: white;
+                    border: 1px solid lightgrey;
+                    border-radius: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    width: 200px;
+                    align-items: center;
+                }
+
+            }
+        }
+    }
+    hr{
+        width: 100%;
+        height: 0;
+        border: 0.5px solid gray;
+        
+    }
+
+    .menu{
+        width: 1400px;
+        padding: 10px 0;
+        display: flex;
+        font-weight: 500;
+        color: gray;
+        justify-content: space-between;
+    }
+}
