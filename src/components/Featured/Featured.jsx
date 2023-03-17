@@ -27,7 +27,7 @@ const Featured = () => {
 
         {/* ===== RIGHT ======= */}
         <div className="right">
-          <img src="./images/header.svg" alt="header image" />
+          <img src="./images/abook.svg" alt="header image" />
         </div>
       </div>
     </div>

@@ -1,5 +1,5 @@
 $primary-color:#002451;
-$secondary-color:#0a2353;
+$secondary-color:#eba62d;
 
 .featured{
     height: 600px;
@@ -49,7 +49,7 @@ $secondary-color:#0a2353;
                 button{
                     border: none;
                     outline: none;
-                    background-color: aquamarine;
+                    background-color:$secondary-color;
                     color: black;
                     width: 120px;
                     height: 50px;
