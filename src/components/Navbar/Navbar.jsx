@@ -77,29 +77,28 @@ const Navbar = () => {
           )}
         </div>
       </div>
-      {active ||
-        (pathname !== "/" && (
-          <>
-            <hr />
-            <div className="menu">
-              <Link className="link" to="/">
-                Action
-              </Link>
-              <Link className="link" to="/">
-                Sci-fi
-              </Link>
-              <Link className="link" to="/">
-                Romance
-              </Link>
-              <Link className="link" to="/">
-                Comedy
-              </Link>
-              <Link className="link" to="/">
-                Fantasy
-              </Link>
-            </div>
-          </>
-        ))}
+      {active && (
+        <>
+          <hr />
+          <div className="menu">
+            <Link className="link" to="/">
+              Action
+            </Link>
+            <Link className="link" to="/">
+              Sci-fi
+            </Link>
+            <Link className="link" to="/">
+              Romance
+            </Link>
+            <Link className="link" to="/">
+              Comedy
+            </Link>
+            <Link className="link" to="/">
+              Fantasy
+            </Link>
+          </div>
+        </>
+      )}
     </div>
   );
 };
