@@ -1,5 +1,5 @@
 $primary-color:#002451;
-$secondary-color:#0a2353;
+$secondary-color: #eba62d;
 
 .navbar{
     display: flex;
@@ -57,7 +57,7 @@ $secondary-color:#0a2353;
                 position: relative;
 
                 &-icon{
-                    color:cadetblue;
+                    color:$secondary-color;
                     cursor: pointer;
                 }
 

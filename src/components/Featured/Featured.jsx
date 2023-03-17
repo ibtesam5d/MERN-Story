@@ -8,7 +8,9 @@ const Featured = () => {
       <div className="container">
         {/* ===== LEFT ======= */}
         <div className="left">
-          <h1>Find your perfect story here</h1>
+          <h1>
+            Find your perfect <span className="story">story</span> here
+          </h1>
           <div className="search">
             <div className="search-input">
               <BiSearch size={30} className="search-icon" />

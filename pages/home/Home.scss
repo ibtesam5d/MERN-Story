@@ -66,7 +66,10 @@ $secondary-color: #eba62d;
                 .pro-desc{
                 color: white;
                 margin-bottom: 10px;
-            }
+                }
+                .pro{
+                    color: $secondary-color;
+                }
 
             }
             .right{

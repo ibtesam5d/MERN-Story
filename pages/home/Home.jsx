@@ -3,8 +3,9 @@ import Featured from "../../src/components/Featured/Featured";
 import Slide from "../../src/components/Slide/Slide";
 import "./Home.scss";
 import Categorycard from "../../src/components/CategoryCard/Categorycard";
-import { cards } from "../../data";
+import { cards, books } from "../../data";
 import { BiCheckCircle } from "react-icons/bi";
+import BooksCard from "../../src/components/BooksCard/BooksCard";
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
           <Categorycard item={item} />
         ))}
       </Slide>
+      {/* ======= Features ======= */}
       <div className="features">
         <div className="container">
           {/* left */}
@@ -58,12 +60,14 @@ const Home = () => {
           </div>
         </div>
       </div>
-      {/* second feature - story pro */}
+      {/* ======== Second Feature - story pro ========== */}
       <div className="features dark">
         <div className="container">
           {/* left */}
           <div className="left">
-            <h1>Story PRO</h1>
+            <h1>
+              Story <span className="pro">PRO</span>
+            </h1>
             <h2>An unlimited supply of books only for you</h2>
             <p className="pro-desc">
               Upgrade to a pro subscription today to never miss a single book
@@ -93,6 +97,12 @@ const Home = () => {
           </div>
         </div>
       </div>
+      {/* ========= Books Slide =========== */}
+      <Slide slidesToShow={4}>
+        {books.map((item) => (
+          <BooksCard item={item} />
+        ))}
+      </Slide>
     </div>
   );
 };
