@@ -1,0 +1,54 @@
+$primary-color:#002451;
+.myBooks {
+    display: flex;
+    justify-content: center;
+    color: #555;
+  
+    .container {
+      width: 1400px;
+      padding: 50px 0px;
+  
+      .title {
+        display: flex;
+        justify-content: space-between;
+  
+        button {
+          background-color: $primary-color;
+          color: white;
+          font-weight: 500;
+          border: none;
+          border-radius: 10px;
+          padding: 10px;
+          cursor: pointer;
+        }
+      }
+      .stories-container{
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        padding: 50px 0;
+
+        .stories{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        justify-content: space-around;
+        
+        .img-container{
+          .image {
+              width: 50px;
+              height: 25px;
+              object-fit: cover;
+            }
+        }
+
+        .delete {
+              width: 30px;
+              cursor: pointer;
+              color: red;
+            }
+
+      }
+      }
+    }
+  }

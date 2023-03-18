@@ -47,6 +47,8 @@ const Books = () => {
             )}
           </div>
         </div>
+
+        {/* ====== BOOKS ======== */}
         <div className="cards">
           {books.map((book) => (
             <BookCard item={book} key={book.id} />
