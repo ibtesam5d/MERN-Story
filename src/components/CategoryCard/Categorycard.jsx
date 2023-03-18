@@ -1,14 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Categorycard.scss";
+import "./CategoryCard.scss";
 
 const Categorycard = ({ item }) => {
   return (
-    <Link to="/books?cat=romance" key={item.id}>
+    <Link to="/books?cat=romance" className="link card">
       <div className="categoryCard">
         <img src={item.image} alt={item.title} />
-        <span className="desc">{item.desc}</span>
-        <span className="title">{item.title}</span>
+        <span className="title">{item.category}</span>
       </div>
     </Link>
   );

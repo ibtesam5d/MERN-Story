@@ -25,42 +25,6 @@ const Footer = () => {
             <span>Action</span>
             <span>Action</span>
           </div>
-          <div className="item">
-            <h2>Categories</h2>
-            <span>Action</span>
-            <span>Action</span>
-            <span>Action</span>
-            <span>Action</span>
-            <span>Action</span>
-            <span>Action</span>
-            <span>Action</span>
-            <span>Action</span>
-            <span>Action</span>
-          </div>
-          <div className="item">
-            <h2>Categories</h2>
-            <span>Action</span>
-            <span>Action</span>
-            <span>Action</span>
-            <span>Action</span>
-            <span>Action</span>
-            <span>Action</span>
-            <span>Action</span>
-            <span>Action</span>
-            <span>Action</span>
-          </div>
-          <div className="item">
-            <h2>Categories</h2>
-            <span>Action</span>
-            <span>Action</span>
-            <span>Action</span>
-            <span>Action</span>
-            <span>Action</span>
-            <span>Action</span>
-            <span>Action</span>
-            <span>Action</span>
-            <span>Action</span>
-          </div>
         </div>
         <hr />
         {/* ========= BOTTOM ======= */}

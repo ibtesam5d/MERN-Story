@@ -9,10 +9,13 @@ $secondary-color:#eba62d;
     color: white;
 
     .container{
-        width: 1400px;
         display: flex;
         align-items:center;
         gap: 50px;
+
+        @media screen and (max-width:1024px){
+            
+        }
 
         .left{
             display: flex;
@@ -41,6 +44,11 @@ $secondary-color:#eba62d;
                     align-items: center;
                     gap: 10px;
 
+                    @media screen and (max-width:425px){
+                        gap: 0;
+                        
+                    }
+
                     .search-icon{
                         color: $primary-color;
                         padding-left: 5px;
@@ -59,12 +67,19 @@ $secondary-color:#eba62d;
                     width: 120px;
                     height: 50px;
                     cursor: pointer;
+                    @media screen and (max-width:425px){
+                        width: 60px;
+                        
+                    }
+
+                    
                 }
             }
             .popular{
                 display: flex;
                 align-items: center;
                 gap: 10px;
+                flex-wrap: wrap;
 
                 button{
                     color: white;
@@ -74,11 +89,26 @@ $secondary-color:#eba62d;
                     border-radius: 20px;
                     font-size: 14px;
                     cursor: pointer;
+
+                    @media screen and (max-width:768px){
+                        font-size: 10px;
+                    }
                 }
+            }
+
+            @media screen and (max-width:425px){
+                h1{
+                    font-size: 32px;
+                }
+                
             }
         }
         .right{
             height: 80%;
+
+            @media screen and (max-width:1024px){
+                display: none;
+            }
 
             img{
                 height: 100%;

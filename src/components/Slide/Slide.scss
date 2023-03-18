@@ -1,11 +1,24 @@
 .slide{
     display: flex;
     justify-content: center;
+    align-items: center;
     padding: 100px 0px;
     // margin: 20px;
+    margin: 0 auto;
+    width: 80%;
 
-    .container{
-        width: 1400px;
+    .sliderContainer{
+
+        width: 70%;
+
+        @media screen and (max-width:1350px){
+            width: 100%;
+        }
+
+        @media screen and (max-width:768px){
+            width: 100%;
+        }
+        
 
         .carousel-prev,.carousel-next{
             width: 50px;
@@ -16,6 +29,11 @@
             top: 0;
             bottom: 0;
             margin: auto;
+
+            @media screen and (max-width:425px){
+                width: 25px;
+                height: 25px;
+            }
         }
     }
 }

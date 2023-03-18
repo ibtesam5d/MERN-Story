@@ -31,7 +31,6 @@ $secondary-color: #eba62d;
         }
         .container{
             display: flex;
-            width: 1400px;
             align-items: center;
             gap: 15px;
             
@@ -71,6 +70,39 @@ $secondary-color: #eba62d;
                     color: $secondary-color;
                 }
 
+                @media screen and (max-width:1024px){
+                    
+                    h1{
+                        font-size: 1.5rem;
+                    }
+                    p{
+                        font-size: 14px;
+                        color: black;
+                        letter-spacing: normal;
+                    }
+                    
+                }
+
+                @media screen and (max-width:768px){
+                    
+                    h1{
+                        font-size: 1.15rem;
+                    }
+                    p{
+                        font-size: 12px;
+                        color: black;
+                        letter-spacing: normal;
+                    }
+
+                    span{
+                        font-size: 14px;
+                    }
+                    .icon{
+                        width: 15px;
+                    }
+                    
+                }
+
             }
             .right{
                 flex: 3;
@@ -81,6 +113,20 @@ $secondary-color: #eba62d;
                 img{
                     width: 450px;
                 }
+
+                @media screen and (max-width:1024px){
+                    flex: 2;
+                    img{
+                        width: 250px;
+                    }
+                    
+                }
+            }
+
+            @media screen and (max-width:768px){
+                    
+               flex-direction: column-reverse;
+                
             }
 
         }

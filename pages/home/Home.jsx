@@ -11,9 +11,9 @@ const Home = () => {
   return (
     <div className="home">
       <Featured />
-      <Slide slidesToShow={5}>
+      <Slide slidesToShow={3}>
         {cards.map((item) => (
-          <Categorycard item={item} />
+          <Categorycard item={item} key={item.id} />
         ))}
       </Slide>
       {/* ======= Features ======= */}
@@ -98,9 +98,9 @@ const Home = () => {
         </div>
       </div>
       {/* ========= Books Slide =========== */}
-      <Slide slidesToShow={4}>
+      <Slide slidesToShow={3}>
         {books.map((item) => (
-          <BooksCard item={item} />
+          <BooksCard item={item} key={item.id} />
         ))}
       </Slide>
     </div>

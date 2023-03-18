@@ -5,6 +5,7 @@ $secondary-color: #eba62d;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     background-color: $primary-color;
     color: white;
     position: sticky;
@@ -17,16 +18,21 @@ $secondary-color: #eba62d;
         color: black;
     }
     .container{
-        width: 1400px;
         display: flex;
+        align-items: center;
         justify-content: space-between;
         padding: 20px 0;
+        
 
         .logo{
             font-size: 34px;
             font-weight: bold;
             .dot{
                 color: white;
+            }
+            @media screen and (max-width:425px){
+                font-size: 20px;
+                
             }
         }
 
@@ -35,6 +41,12 @@ $secondary-color: #eba62d;
             gap: 24px;
             align-items: center;
             font-weight: 500;
+
+            @media screen and (max-width:500px){
+                gap: 10px;
+                font-size: 10px;
+                
+            }
             button{
                 color: white;
                 padding: 10px 20px;
@@ -55,6 +67,7 @@ $secondary-color: #eba62d;
                 align-items: center;
                 gap: 10px;
                 position: relative;
+                cursor: pointer;
 
                 &-icon{
                     color:$secondary-color;
@@ -88,11 +101,15 @@ $secondary-color: #eba62d;
     }
 
     .menu{
-        width: 1400px;
+        width: 75%;
         padding: 10px 0;
         display: flex;
         font-weight: 500;
         color: gray;
         justify-content: space-between;
+
+        @media screen and (max-width:425px){
+            font-size: 10px;
+        }
     }
 }
