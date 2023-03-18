@@ -51,6 +51,9 @@ export const books = [
     image: "/images/romance.svg",
     profilePic: "/images/userm1.png",
     author: "Ricky",
+    desc: "some description about book",
+    price: 13.99,
+    star: 5,
   },
   {
     id: 1,
@@ -59,6 +62,9 @@ export const books = [
     image: "/images/action.svg",
     profilePic: "/images/userf1.png",
     author: "Tania",
+    desc: "some description about book",
+    price: 13.99,
+    star: 5,
   },
   {
     id: 2,
@@ -67,6 +73,9 @@ export const books = [
     image: "/images/comedy.svg",
     profilePic: "/images/userm1.png",
     author: "Ricky",
+    desc: "some description about book",
+    price: 13.99,
+    star: 5,
   },
   {
     id: 3,
@@ -75,6 +84,9 @@ export const books = [
     image: "/images/sci-fi.svg",
     profilePic: "/images/userf1.png",
     author: "Tania",
+    desc: "some description about book",
+    price: 13.99,
+    star: 5,
   },
   {
     id: 4,
@@ -83,6 +95,9 @@ export const books = [
     image: "/images/fantasy.svg",
     profilePic: "/images/userm1.png",
     author: "Ricky",
+    desc: "some description about book",
+    price: 13.99,
+    star: 5,
   },
   {
     id: 5,
@@ -91,6 +106,9 @@ export const books = [
     image: "/images/romance.svg",
     profilePic: "/images/userf1.png",
     author: "Tania",
+    desc: "some description about book",
+    price: 13.99,
+    star: 5,
   },
   {
     id: 6,
@@ -99,5 +117,8 @@ export const books = [
     image: "/images/action.svg",
     profilePic: "/images/userm1.png",
     author: "Ricky",
+    desc: "some description about book",
+    price: 13.99,
+    star: 5,
   },
 ];
