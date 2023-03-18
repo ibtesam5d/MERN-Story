@@ -28,11 +28,18 @@ $primary-color:#002451;
         gap: 40px;
         padding: 50px 0;
 
+        
+
         .stories{
         display: flex;
         align-items: center;
         gap: 20px;
         justify-content: space-around;
+
+        @media screen and (max-width:500px){
+          flex-direction: column;
+          border-bottom: 1px solid rgba(128, 128, 128, 0.248);
+        }
         
         .img-container{
           .image {

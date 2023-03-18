@@ -17,12 +17,23 @@
         gap: 20px;
         height: 500px;
         overflow: scroll;
+
+        @media screen and (max-width:768px){
+          padding: 0;
+          overflow: auto;
+        }
   
         .item {
           display: flex;
           gap: 20px;
           max-width: 600px;
           font-size: 18px;
+          @media screen and (max-width:768px){
+            font-size: 14px;
+          }
+          @media screen and (max-width:320px){
+            font-size: 10px;
+          }
   
           &.owner {
             flex-direction: row-reverse;
@@ -33,6 +44,10 @@
               border-radius: 20px 0px 20px 20px;
               background-color: royalblue;
               color: white;
+
+              @media screen and (max-width:500px){
+                font-size: 10px;
+              }
             }
           }
   
@@ -50,8 +65,14 @@
             border-radius: 0px 20px 20px 20px;
             color: gray;
             font-weight: 300;
+
+            @media screen and (max-width:500px){
+              font-size: 10px;
+            }
           }
         }
+
+        
       }
   
       hr {
@@ -64,6 +85,11 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        
+
+        @media screen and (max-width:500px){
+          gap: 20px;
+        }
   
         textarea {
           width: 80%;
@@ -82,6 +108,11 @@
           border-radius: 10px;
           cursor: pointer;
           width: 100px;
+
+          @media screen and (max-width:500px){
+            font-size: 12px;
+            padding: 10px;
+          }
         }
       }
     }

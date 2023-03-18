@@ -7,11 +7,16 @@ import { GiTakeMyMoney } from "react-icons/gi";
 const Book = () => {
   return (
     <div className="book">
+      <div className="page-title">
+        <span className="breadcrumbs">Story - Action -</span>
+        <h1>Caught in the plan</h1>
+      </div>
+
       <div className="container">
         {/* ======== LEFT ========== */}
         <div className="left">
-          <span className="breadcrumbs">Story - Action -</span>
-          <h1>Caught in the plan</h1>
+          {/* <span className="breadcrumbs">Story - Action -</span>
+          <h1>Caught in the plan</h1> */}
           <div className="user">
             <img
               className="pp"

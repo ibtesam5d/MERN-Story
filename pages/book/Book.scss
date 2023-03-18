@@ -3,25 +3,51 @@ $primary-color:#002451;
 .book {
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    .page-title{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 50px;
+      .breadcrumbs {
+        font-weight: 300;
+        text-transform: uppercase;
+        font-size: 13px;
+        color: #555;
+      }
+    }
+
+    
   
     .container {
       width: 1400px;
       padding: 30px 0px;
       display: flex;
       gap: 50px;
+      // align-items: center;
+
+      @media screen and (max-width:1024px){
+        flex-direction: column-reverse;
+      }
   
       .left {
         flex: 2;
         display: flex;
         flex-direction: column;
         gap: 20px;
-  
-        .breadcrumbs {
-          font-weight: 300;
-          text-transform: uppercase;
-          font-size: 13px;
-          color: #555;
+
+        @media screen and (max-width:1250px){
+          flex:1;
         }
+  
+        // .breadcrumbs {
+        //   font-weight: 300;
+        //   text-transform: uppercase;
+        //   font-size: 13px;
+        //   color: #555;
+        // }
   
         
         .user {
@@ -65,6 +91,19 @@ $primary-color:#002451;
           img {
             max-height: 500px;
             object-fit: contain;
+
+            @media screen and (max-width:1286px){
+              max-height: 300px;
+            }
+            @media screen and (max-width:850px){
+              max-height: 200px;
+            }
+            @media screen and (max-width:768px){
+              max-height: 300px;
+            }
+            @media screen and (max-width:500px){
+              max-height: 170px;
+            }
           }
         }
   
@@ -228,6 +267,14 @@ $primary-color:#002451;
         max-height: 500px;
         position: sticky;
         top: 150px;
+
+        @media screen and (max-width:1250px){
+          flex:2;
+          font-size: 14px;
+        }
+        @media screen and (max-width:1024px){
+          position: inherit;
+        }
   
         .price {
           display: flex;
@@ -236,16 +283,40 @@ $primary-color:#002451;
   
           h2{
             font-weight: 300;
+            @media screen and (max-width:1250px){
+              font-size: 16px;
+            }
+
+            @media screen and (max-width:768px){
+              font-size: 24px;
+            }
+            @media screen and (max-width:425px){
+              font-size: 16px;
+            }
           }
   
           h3{
             font-weight: 500;
+            @media screen and (max-width:425px){
+              font-size: 14px;
+            }
           }
         }
   
         p{
           color: gray;
           margin: 10px 0px;
+
+          @media screen and (max-width:1250px){
+            font-size: 12px;
+          }
+          @media screen and (max-width:768px){
+            font-size: 16px;
+          }
+          @media screen and (max-width:425px){
+            font-size: 12px;
+          }
+          
         }
   
         .details {

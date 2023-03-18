@@ -24,6 +24,10 @@ $primary-color:#002451;
         label {
           color: gray;
           font-size: 18px;
+
+          @media screen and (max-width:500px){
+            font-size: 16px;
+          }
         }
   
         .info {
@@ -37,6 +41,10 @@ $primary-color:#002451;
           select,
           textarea {
             padding: 20px;
+
+            @media screen and (max-width:500px){
+              padding: 10px;
+            }
           }
   
           button {
@@ -47,6 +55,11 @@ $primary-color:#002451;
             font-size: 18px;
             background-color: $primary-color;
             cursor: pointer;
+
+            @media screen and (max-width:500px){
+              font-size: 16px;
+              padding: 10px;
+            }
           }
         }
       }

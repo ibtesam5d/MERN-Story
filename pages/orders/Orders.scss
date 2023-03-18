@@ -32,6 +32,12 @@
         align-items: center;
         gap: 20px;
         justify-content: space-around;
+
+        @media screen and (max-width:500px){
+          flex-direction: column;
+          border-bottom: 1px solid rgba(128, 128, 128, 0.248);
+          padding: 10px;
+        }
         
         .img-container{
           .image {
