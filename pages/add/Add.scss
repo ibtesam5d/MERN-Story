@@ -1,0 +1,54 @@
+$primary-color:#002451;
+
+.add {
+    display: flex;
+    justify-content: center;
+  
+    .container {
+      width: 1400px;
+      padding: 50px 0px;
+  
+      h1 {
+        width: max-content;
+        margin: 0 auto;
+        margin-bottom: 30px;
+        color: gray;
+        font-weight: 300;
+        text-align: center;
+      }
+  
+      .sections {
+        display: flex;
+        justify-content: center;
+  
+        label {
+          color: gray;
+          font-size: 18px;
+        }
+  
+        .info {
+          
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          justify-content: space-between;
+  
+          input,
+          select,
+          textarea {
+            padding: 20px;
+          }
+  
+          button {
+            border: none;
+            padding: 20px;
+            color: white;
+            font-weight: 500;
+            font-size: 18px;
+            background-color: $primary-color;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }

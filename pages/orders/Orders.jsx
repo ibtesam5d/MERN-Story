@@ -33,7 +33,7 @@ const Orders = () => {
               <strong>Price:</strong> 59.<sup>99</sup>
             </p>
             <p>
-              <strong>{currentUser.isAuthor ? "Author" : "Buyer"}</strong> Maria
+              <strong>{currentUser.isAuthor ? "Buyer" : "Author"}</strong> Maria
               Anders
             </p>
             <div className="">
