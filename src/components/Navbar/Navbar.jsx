@@ -1,11 +1,15 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { BiUserCircle } from "react-icons/bi";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import newRequest from "../../utils/newRequest";
 import "./Navbar.scss";
 const Navbar = () => {
   const [active, setActive] = useState(false);
   const [open, setOpen] = useState(false);
   const { pathname } = useLocation();
+
+  const navigate = useNavigate();
 
   const isActive = () => {
     window.scrollY > 0 ? setActive(true) : setActive(false);
@@ -18,11 +22,15 @@ const Navbar = () => {
       window.removeEventListener("scroll", isActive);
     };
   }, []);
-
-  const currentUser = {
-    id: 0,
-    username: "Ricky",
-    isAuthor: true,
+  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+  const handleLogout = async () => {
+    try {
+      await newRequest.post("/auth/logout");
+      localStorage.setItem("currentUser", null);
+      navigate("/");
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -38,18 +46,19 @@ const Navbar = () => {
           <Link className="link" to="/">
             Home
           </Link>
-          <Link className="link" to="/login">
-            Sign in
-          </Link>
-          {!currentUser.isAuthor && <Link to="/">Become an Author</Link>}
-          {!currentUser && <button>Join</button>}
-          {currentUser && (
+          {currentUser !== null && !currentUser?.isAuthor && (
+            <Link to="/" className="link">
+              Become an Author
+            </Link>
+          )}
+
+          {currentUser ? (
             <div className="user" onClick={() => setOpen(!open)}>
               <BiUserCircle size={30} className="user-icon" />
               <span>{currentUser?.username}</span>
               {open && (
                 <div className="options">
-                  {currentUser.isAuthor && (
+                  {currentUser?.isAuthor && (
                     <>
                       <Link className="link" to="/my-books">
                         My Books
@@ -65,12 +74,21 @@ const Navbar = () => {
                   <Link className="link" to="/messages">
                     Messages
                   </Link>
-                  <Link className="link" to="/">
+                  <Link className="link" onClick={handleLogout}>
                     Logout
                   </Link>
                 </div>
               )}
             </div>
+          ) : (
+            <>
+              <Link to="/login" className="link">
+                Sign In
+              </Link>
+              <Link to="/register" className="link">
+                <button>Join</button>
+              </Link>
+            </>
           )}
         </div>
       </div>
