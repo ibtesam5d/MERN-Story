@@ -22,7 +22,12 @@ const Navbar = () => {
       window.removeEventListener("scroll", isActive);
     };
   }, []);
-  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+
+  const getUser = JSON.parse(localStorage.getItem("currentUser"));
+  console.log(getUser);
+  const currentUser = getUser?.userInfo;
+  console.log(currentUser);
+
   const handleLogout = async () => {
     try {
       await newRequest.post("/auth/logout");
@@ -46,7 +51,7 @@ const Navbar = () => {
           <Link className="link" to="/">
             Home
           </Link>
-          {currentUser !== null && !currentUser?.isAuthor && (
+          {currentUser !== undefined && !currentUser?.isAuthor && (
             <Link to="/" className="link">
               Become an Author
             </Link>
