@@ -2,22 +2,41 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./BookCard.scss";
 import { BsFillStarFill, BsFillHeartFill } from "react-icons/bs";
+import { useQuery } from "@tanstack/react-query";
+import newRequest from "../../utils/newRequest";
 
 const BookCard = ({ item }) => {
+  const { isLoading, error, data, refetch } = useQuery({
+    queryKey: [item.userId],
+    queryFn: () =>
+      newRequest.get(`/users/${item.userId}`).then((res) => {
+        return res.data;
+      }),
+  });
+
   return (
     <Link to="/book/12" className="link">
       <div className="bookCard">
         <img src={item.image} alt={item.title} />
         {/* ==== INFO ==== */}
         <div className="info">
-          <div className="user">
-            <img src={item.profilePic} alt={item.author} />
-            <span>{item.author}</span>
-          </div>
+          {isLoading ? (
+            "Loading"
+          ) : error ? (
+            "error"
+          ) : (
+            <div className="user">
+              <img src={data.img || "/images/userrn.png"} alt={data.username} />
+              <span>{data.username}</span>
+            </div>
+          )}
           <p>{item.desc}</p>
           <div className="star">
             <BsFillStarFill className="star-icon" />
-            <span>{item.star}</span>
+            <span>
+              {!isNaN(item.totalStars / item.starNumber) &&
+                Math.round(item.totalStars / item.starNumber)}
+            </span>
           </div>
         </div>
 

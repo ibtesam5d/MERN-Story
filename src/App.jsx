@@ -1,4 +1,11 @@
 import "./App.css";
+import {
+  useQuery,
+  useMutation,
+  useQueryClient,
+  QueryClient,
+  QueryClientProvider,
+} from "@tanstack/react-query";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import {
@@ -21,13 +28,16 @@ import Register from "../pages/register/Register";
 import "../src/app.scss";
 
 function App() {
+  const queryClient = new QueryClient();
   const Layout = () => {
     return (
-      <>
-        <Navbar />
-        <Outlet />
-        <Footer />
-      </>
+      <div className="app">
+        <QueryClientProvider client={queryClient}>
+          <Navbar />
+          <Outlet />
+          <Footer />
+        </QueryClientProvider>
+      </div>
     );
   };
   const router = createBrowserRouter([

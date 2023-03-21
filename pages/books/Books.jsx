@@ -1,17 +1,43 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./Books.scss";
 import { BsChevronDown } from "react-icons/bs";
-import { books } from "../../data";
 import BookCard from "../../src/components/BookCard/BookCard";
+import { useQuery } from "@tanstack/react-query";
+import newRequest from "../../src/utils/newRequest";
+import { useLocation } from "react-router-dom";
 
 const Books = () => {
   const [open, setOpen] = useState(false);
 
   const [sort, setSort] = useState("sales");
+  const minRef = useRef();
+  const maxRef = useRef();
+
+  const { search } = useLocation();
+
+  const { isLoading, error, data, refetch } = useQuery({
+    queryKey: ["books"],
+    queryFn: () =>
+      newRequest
+        .get(
+          `/books${search}&min=${minRef.current.value}&max=${maxRef.current.value}&sort=${sort}`
+        )
+        .then((res) => {
+          return res.data;
+        }),
+  });
 
   const reSort = (type) => {
     setSort(type);
     setOpen(false);
+  };
+
+  useEffect(() => {
+    refetch();
+  }, [sort]);
+
+  const apply = () => {
+    refetch();
   };
 
   return (
@@ -25,9 +51,9 @@ const Books = () => {
         <div className="menu">
           <div className="left">
             <span>Price</span>
-            <input type="text" placeholder="min" />
-            <input type="text" placeholder="max" />
-            <button>Apply</button>
+            <input ref={minRef} type="text" placeholder="min" />
+            <input ref={maxRef} type="text" placeholder="max" />
+            <button onClick={apply}>Apply</button>
           </div>
           <div className="right">
             <span className="sortBy">Sortby</span>
@@ -50,9 +76,11 @@ const Books = () => {
 
         {/* ====== BOOKS ======== */}
         <div className="cards">
-          {books.map((book) => (
-            <BookCard item={book} key={book.id} />
-          ))}
+          {isLoading
+            ? "Loading.."
+            : error
+            ? "something went wrong"
+            : data.map((book) => <BookCard item={book} key={book._id} />)}
         </div>
       </div>
     </div>
