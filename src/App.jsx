@@ -26,6 +26,8 @@ import Mybooks from "../pages/myBooks/Mybooks";
 import Orders from "../pages/orders/Orders";
 import Register from "../pages/register/Register";
 import "../src/app.scss";
+import Pay from "../pages/pay/Pay";
+import Success from "../pages/success/Success";
 
 function App() {
   const queryClient = new QueryClient();
@@ -84,6 +86,14 @@ function App() {
         {
           path: "/register",
           element: <Register />,
+        },
+        {
+          path: "/pay/:id",
+          element: <Pay />,
+        },
+        {
+          path: "/success",
+          element: <Success />,
         },
       ],
     },

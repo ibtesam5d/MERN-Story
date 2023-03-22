@@ -6,7 +6,6 @@ import { GiTakeMyMoney } from "react-icons/gi";
 import { Link, useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import newRequest from "../../src/utils/newRequest";
-import Review from "../../src/components/Review/Review";
 import Reviews from "../../src/components/Reviews/Reviews";
 
 const Book = () => {
@@ -150,8 +149,9 @@ const Book = () => {
                   <span>Moneyback guranteed</span>
                 </div>
               </div>
-
-              <button>Continue</button>
+              <Link to={`/pay/${id}`}>
+                <button>Continue</button>
+              </Link>
             </div>
           </div>
         </>

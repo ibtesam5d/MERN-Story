@@ -24,9 +24,9 @@ const Navbar = () => {
   }, []);
 
   const getUser = JSON.parse(localStorage.getItem("currentUser"));
-  console.log(getUser);
+  // console.log(getUser);
   const currentUser = getUser?.userInfo;
-  console.log(currentUser);
+  // console.log(currentUser);
 
   const handleLogout = async () => {
     try {
