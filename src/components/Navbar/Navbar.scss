@@ -123,8 +123,11 @@ $secondary-color: #eba62d;
         color: gray;
         justify-content: space-between;
 
-        @media screen and (max-width:425px){
-            font-size: 10px;
+        @media screen and (max-width:700px){
+            font-size: 12px;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            gap: 10px;
         }
     }
 }

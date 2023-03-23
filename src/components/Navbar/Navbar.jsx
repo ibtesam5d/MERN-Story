@@ -4,6 +4,8 @@ import { BiUserCircle } from "react-icons/bi";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import newRequest from "../../utils/newRequest";
 import "./Navbar.scss";
+import { cards } from "../../../data.js";
+
 const Navbar = () => {
   const [active, setActive] = useState(false);
   const [open, setOpen] = useState(false);
@@ -76,9 +78,6 @@ const Navbar = () => {
                   <Link className="link" to="/orders">
                     Orders
                   </Link>
-                  <Link className="link" to="/messages">
-                    Messages
-                  </Link>
                   <Link className="link" onClick={handleLogout}>
                     Logout
                   </Link>
@@ -97,25 +96,38 @@ const Navbar = () => {
           )}
         </div>
       </div>
-      {active && (
+      {active && pathname === "/" ? (
         <>
           <hr />
           <div className="menu">
-            <Link className="link" to="/">
-              Action
-            </Link>
-            <Link className="link" to="/">
-              Sci-fi
-            </Link>
-            <Link className="link" to="/">
-              Romance
-            </Link>
-            <Link className="link" to="/">
-              Comedy
-            </Link>
-            <Link className="link" to="/">
-              Fantasy
-            </Link>
+            {cards.map((item) => {
+              return (
+                <Link
+                  className="link"
+                  to={`/books?category=${item.category}`}
+                  key={item.id}
+                >
+                  {item.category}
+                </Link>
+              );
+            })}
+          </div>
+        </>
+      ) : (
+        <>
+          <hr />
+          <div className="menu">
+            {cards.map((item) => {
+              return (
+                <Link
+                  className="link"
+                  to={`/books?category=${item.category}`}
+                  key={item.id}
+                >
+                  {item.category}
+                </Link>
+              );
+            })}
           </div>
         </>
       )}

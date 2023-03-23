@@ -14,6 +14,9 @@ const Books = () => {
   const maxRef = useRef();
 
   const { search } = useLocation();
+  const params = new URLSearchParams(search);
+  const category = params.get("category");
+  const all = params.get("all");
 
   const { isLoading, error, data, refetch } = useQuery({
     queryKey: ["books"],
@@ -34,7 +37,7 @@ const Books = () => {
 
   useEffect(() => {
     refetch();
-  }, [sort]);
+  }, [sort, category, all]);
 
   const apply = () => {
     refetch();
@@ -43,8 +46,10 @@ const Books = () => {
   return (
     <div className="books">
       <div className="container">
-        <span className="breadcrumbs">Story - Action</span>
-        <h1>Non-stop Action</h1>
+        <span className="breadcrumbs">
+          {all !== null ? `Story - ${all}` : `Story - ${category}`}
+        </span>
+        <h1>{all !== null ? all : category}</h1>
         <p>
           Explore the world of fights and dramas with story's action library
         </p>

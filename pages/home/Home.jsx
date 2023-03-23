@@ -6,8 +6,11 @@ import Categorycard from "../../src/components/CategoryCard/Categorycard";
 import { cards, books } from "../../data";
 import { BiCheckCircle } from "react-icons/bi";
 import BooksCard from "../../src/components/BooksCard/BooksCard";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="home">
       <Featured />
@@ -86,7 +89,9 @@ const Home = () => {
               <BiCheckCircle size={25} className="icon" />
               <span>The best for every inspiration</span>
             </div>
-            <button>Explore Story PRO</button>
+            <button onClick={() => navigate("/books?all=all-books")}>
+              Explore All Books
+            </button>
           </div>
           {/* right */}
           <div className="right">

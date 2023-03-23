@@ -17,8 +17,7 @@
       color: #555;
     }
 
-    h1 {
-    }
+    
 
     p {
       color: #999;
@@ -115,12 +114,17 @@
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
+      gap: 20px;
 
       @media screen and (max-width:768px){
         flex-direction: column;
         gap: 30px;
         justify-content: center;
         align-items: center;
+      }
+      @media screen and (max-width:430px){
+        
+        font-size: 12px;
       }
     }
   }

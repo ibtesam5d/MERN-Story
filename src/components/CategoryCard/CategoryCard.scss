@@ -1,12 +1,12 @@
 .card{
     .categoryCard{
-        color: black;
+        
         width: 200px;
         height: 300px;
         border-radius: 5px;
         cursor: pointer;
         position: relative;
-        border: 2px solid black;
+        // border: 2px solid black;
         
     
         @media screen and (max-width:800px){
@@ -58,8 +58,11 @@
             position: absolute;
             left: 15px;
             top: 40px;
-            font-weight: 500;
+            font-weight: 700;
             font-size: 24px;
+            color: rgb(80, 71, 71);
+            background-color: white;
+            padding: 5px;
 
             @media screen and (max-width:768px){
                 font-size: 14px;

@@ -8,7 +8,7 @@ const Featured = () => {
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
-    navigate(`/books?search=${input}`);
+    navigate(`/books?category=${input}`);
   };
   return (
     <div className="featured">
@@ -23,7 +23,7 @@ const Featured = () => {
               <BiSearch size={30} className="search-icon" />
               <input
                 type="text"
-                placeholder="Try 'finding lucy..'"
+                placeholder="Try 'comedy'"
                 onChange={(e) => setInput(e.target.value)}
               />
             </div>
@@ -31,10 +31,15 @@ const Featured = () => {
           </div>
           <div className="popular">
             <span>Popular:</span>
-            <button>Action Comedy</button>
-            <button>Office Comedy</button>
-            <button>Off World Sci-fi</button>
-            <button>Magic!</button>
+            <button onClick={() => navigate("/books?category=comedy")}>
+              Comedy
+            </button>
+            <button onClick={() => navigate("/books?category=action")}>
+              Action
+            </button>
+            <button onClick={() => navigate("/books?category=mystery")}>
+              Mystery
+            </button>
           </div>
         </div>
 

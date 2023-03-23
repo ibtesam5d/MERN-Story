@@ -48,9 +48,9 @@ const Register = () => {
 
   return (
     <div className="register">
+      <h1>Create a new account</h1>
       <form onSubmit={handleSubmit}>
         <div className="left">
-          <h1>Create a new account</h1>
           <label htmlFor="">Username</label>
           <input
             name="username"
@@ -72,7 +72,7 @@ const Register = () => {
           <button type="submit">Register</button>
         </div>
         <div className="right">
-          <h1>I want to become an author</h1>
+          <h2>I want to become an author</h2>
           <div className="toggle">
             <label htmlFor="">Activate the author account</label>
             <label className="switch">
