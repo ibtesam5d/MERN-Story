@@ -16,6 +16,21 @@ $secondary-color: #eba62d;
     &.active{
         background-color: white;
         color: black;
+
+        button{
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: 1px solid white;
+            cursor: pointer;
+            background-color: rgb(59, 59, 175) !important;
+
+            &:hover{
+                background-color: white !important;
+                border-color:  rgb(59, 59, 175) !important;
+                color: black !important;
+            }
+        }
     }
     .container{
         display: flex;

@@ -3,13 +3,17 @@ import "./Book.scss";
 import { Slider } from "infinite-react-carousel/lib";
 import { BsFillStarFill, BsCheckLg } from "react-icons/bs";
 import { GiTakeMyMoney } from "react-icons/gi";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import newRequest from "../../src/utils/newRequest";
 import Reviews from "../../src/components/Reviews/Reviews";
+import getCurentUser from "../../src/utils/getCurrentUser";
 
 const Book = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
+
+  const currentUser = getCurentUser();
 
   const { isLoading, error, data } = useQuery({
     queryKey: ["book"],
@@ -149,9 +153,18 @@ const Book = () => {
                   <span>Moneyback guranteed</span>
                 </div>
               </div>
-              <Link to={`/pay/${id}`}>
-                <button>Continue</button>
-              </Link>
+              <div className="order-button">
+                {currentUser && (
+                  <button onClick={() => navigate(`/pay/${id}`)}>
+                    Continue
+                  </button>
+                )}
+                {!currentUser && (
+                  <button onClick={() => navigate(`/login`)}>
+                    Please Login to Continue
+                  </button>
+                )}
+              </div>
             </div>
           </div>
         </>

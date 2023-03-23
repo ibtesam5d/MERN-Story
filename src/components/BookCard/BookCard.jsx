@@ -17,7 +17,7 @@ const BookCard = ({ item }) => {
   console.log(item);
 
   return (
-    <Link to="/book/12" className="link">
+    <Link to={`/book/${item._id}`} className="link">
       {isLoading ? (
         "Loading"
       ) : error ? (
