@@ -14,42 +14,45 @@ const BookCard = ({ item }) => {
       }),
   });
 
+  console.log(item);
+
   return (
     <Link to="/book/12" className="link">
-      <div className="bookCard">
-        <img src={item.image} alt={item.title} />
-        {/* ==== INFO ==== */}
-        <div className="info">
-          {isLoading ? (
-            "Loading"
-          ) : error ? (
-            "error"
-          ) : (
+      {isLoading ? (
+        "Loading"
+      ) : error ? (
+        "failed to load"
+      ) : (
+        <div className="bookCard">
+          <img src={item.cover} alt={item.title} />
+          {/* ==== INFO ==== */}
+          <div className="info">
             <div className="user">
-              <img src={data.img || "/images/userrn.png"} alt={data.username} />
+              <img src={data.img} alt={data.username} />
               <span>{data.username}</span>
             </div>
-          )}
-          <p>{item.desc}</p>
-          <div className="star">
-            <BsFillStarFill className="star-icon" />
-            <span>
-              {!isNaN(item.totalStars / item.starNumber) &&
-                Math.round(item.totalStars / item.starNumber)}
-            </span>
+
+            <p>{item.desc}</p>
+            <div className="star">
+              <BsFillStarFill className="star-icon" />
+              <span>
+                {!isNaN(item.totalStars / item.starNumber) &&
+                  Math.round(item.totalStars / item.starNumber)}
+              </span>
+            </div>
+          </div>
+
+          {/* ==== DETAILS ==== */}
+
+          <div className="detail">
+            <BsFillHeartFill className="heart-icon" />
+            <div className="price">
+              <span>STARTING AT</span>
+              <h2>{item.price}</h2>
+            </div>
           </div>
         </div>
-
-        {/* ==== DETAILS ==== */}
-
-        <div className="detail">
-          <BsFillHeartFill className="heart-icon" />
-          <div className="price">
-            <span>STARTING AT</span>
-            <h2>{item.price}</h2>
-          </div>
-        </div>
-      </div>
+      )}
     </Link>
   );
 };

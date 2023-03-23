@@ -46,6 +46,17 @@ $primary-color:#002451;
               padding: 10px;
             }
           }
+          .images{
+            display: flex;
+            align-items: center;
+            gap: 20px;
+  
+            .imagesInputs{
+              display: flex;
+              flex-direction: column;
+              gap: 20px;
+            }
+          }
   
           button {
             border: none;

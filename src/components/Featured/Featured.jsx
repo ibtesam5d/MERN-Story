@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Featured.scss";
 import { BiSearch } from "react-icons/bi";
+import { useNavigate } from "react-router-dom";
 
 const Featured = () => {
+  const [input, setInput] = useState("");
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    navigate(`/books?search=${input}`);
+  };
   return (
     <div className="featured">
       <div className="container">
@@ -14,9 +21,13 @@ const Featured = () => {
           <div className="search">
             <div className="search-input">
               <BiSearch size={30} className="search-icon" />
-              <input type="text" placeholder="Try 'comedy'" />
+              <input
+                type="text"
+                placeholder="Try 'finding lucy..'"
+                onChange={(e) => setInput(e.target.value)}
+              />
             </div>
-            <button>Search</button>
+            <button onClick={handleSubmit}>Search</button>
           </div>
           <div className="popular">
             <span>Popular:</span>
