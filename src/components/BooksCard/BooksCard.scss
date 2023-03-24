@@ -1,25 +1,25 @@
 .booksCard{
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 410px;
     border-radius: 5px;
     cursor: pointer;
     overflow: hidden;
-    margin: 20px;
+    margin: 10px;
 
-    @media screen and (max-width:1024px){
-        width: 250px;
-        height: 300px;
-        margin: 10px;
-    }
+    // @media screen and (max-width:1024px){
+    //     width: 250px;
+    //     height: 410px;
+    //     margin: 10px;
+    // }
     @media screen and (max-width:768px){
         width: 200px;
-        height: 270px;
+        height: 340px;
         margin: 10px;
         
     }
     @media screen and (max-width:660px){
         width: 130px;
-        height: 200px;
+        height: 250px;
         margin: 10px;
         
     }

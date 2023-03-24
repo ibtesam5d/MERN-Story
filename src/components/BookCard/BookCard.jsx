@@ -14,7 +14,7 @@ const BookCard = ({ item }) => {
       }),
   });
 
-  console.log(item);
+  // console.log(item);
 
   return (
     <Link to={`/book/${item._id}`} className="link">

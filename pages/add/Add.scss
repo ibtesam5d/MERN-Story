@@ -15,6 +15,10 @@ $primary-color:#002451;
         color: gray;
         font-weight: 300;
         text-align: center;
+
+        @media screen and (max-width:500px){
+          font-size: 24px;;
+        }
       }
   
       .sections {
@@ -43,13 +47,19 @@ $primary-color:#002451;
             padding: 20px;
 
             @media screen and (max-width:500px){
-              padding: 10px;
+              padding: 5px;
+              width: 200px;
             }
           }
           .images{
             display: flex;
             align-items: center;
             gap: 20px;
+            justify-content: center;
+
+            @media screen and (max-width:500px){
+              flex-direction: column;
+            }
   
             .imagesInputs{
               display: flex;
@@ -70,9 +80,14 @@ $primary-color:#002451;
             @media screen and (max-width:500px){
               font-size: 16px;
               padding: 10px;
+              width: max-content;
             }
           }
         }
+      }
+
+      @media screen and (max-width:425px){
+        width: 300px;
       }
     }
   }

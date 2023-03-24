@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Featured from "../../src/components/Featured/Featured";
 import Slide from "../../src/components/Slide/Slide";
 import "./Home.scss";
@@ -7,9 +7,25 @@ import { cards, books } from "../../data";
 import { BiCheckCircle } from "react-icons/bi";
 import BooksCard from "../../src/components/BooksCard/BooksCard";
 import { useNavigate } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
+import newRequest from "../../src/utils/newRequest.js";
 
 const Home = () => {
   const navigate = useNavigate();
+
+  const { isLoading, error, data, refetch } = useQuery({
+    queryKey: ["latestBooks"],
+    queryFn: () =>
+      newRequest.get(`/books?all=all-books`).then((res) => {
+        return res.data;
+      }),
+  });
+
+  // console.log(data);
+
+  // useEffect(() => {
+  //   refetch();
+  // }, []);
 
   return (
     <div className="home">
@@ -103,11 +119,17 @@ const Home = () => {
         </div>
       </div>
       {/* ========= Books Slide =========== */}
-      <Slide slidesToShow={3}>
-        {books.map((item) => (
-          <BooksCard item={item} key={item.id} />
-        ))}
-      </Slide>
+      {isLoading ? (
+        "Loading.."
+      ) : error ? (
+        "failed to load"
+      ) : (
+        <Slide slidesToShow={2}>
+          {data.map((book) => (
+            <BooksCard item={book} key={book._id} />
+          ))}
+        </Slide>
+      )}
     </div>
   );
 };

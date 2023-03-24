@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { BiUserCircle } from "react-icons/bi";
+import { AiOutlineArrowRight } from "react-icons/ai";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import newRequest from "../../utils/newRequest";
 import "./Navbar.scss";
@@ -53,10 +54,16 @@ const Navbar = () => {
           <Link className="link" to="/">
             Home
           </Link>
-          {currentUser !== undefined && !currentUser?.isAuthor && (
+          {currentUser?.isAuthor ? (
             <Link to="/" className="link">
-              Become an Author
+              Reader
             </Link>
+          ) : currentUser !== undefined && currentUser?.isAuthor ? (
+            <Link to="/" className="link">
+              Author
+            </Link>
+          ) : (
+            <Link to="/books?all=all-book" className="link"></Link>
           )}
 
           {currentUser ? (

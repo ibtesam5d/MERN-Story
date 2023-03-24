@@ -5,6 +5,7 @@ import { MdDelete } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import newRequest from "../../src/utils/newRequest";
 import { useQuery } from "@tanstack/react-query";
+// import OrderedBook from "../../src/components/OrderedBook/OrderedBook";
 
 const Orders = () => {
   const getUser = JSON.parse(localStorage.getItem("currentUser"));
@@ -20,7 +21,9 @@ const Orders = () => {
         return res.data;
       }),
   });
+
   console.log(data);
+
   return (
     <div className="orders">
       {isLoading ? (
@@ -34,33 +37,6 @@ const Orders = () => {
           </div>
 
           <div className="orders-container">
-            {/* {data.map((order) => {
-              <div className="stories" key={order._id}>
-                <div className="img-container">
-                  <img
-                    className="image"
-                    src={
-                      order.img ||
-                      "https://images.pexels.com/photos/270408/pexels-photo-270408.jpeg?auto=compress&cs=tinysrgb&w=1600"
-                    }
-                    alt={order.title}
-                  />
-                </div>
-                <p>
-                  <strong>Title:</strong> {order.title}
-                </p>
-                <p>
-                  <strong>Price:</strong> {order.price}
-                </p>
-                <p>
-                  <strong>{currentUser?.isAuthor ? "Buyer" : "Author"}</strong>{" "}
-                  Maria Anders
-                </p>
-                <div className="">
-                  <AiFillMessage className="message" size={25} />
-                </div>
-              </div>;
-            })} */}
             {data.map((item) => {
               return (
                 <div className="stories" key={item._id}>
@@ -68,7 +44,7 @@ const Orders = () => {
                     <img
                       className="image"
                       src={
-                        item.img ||
+                        item.image ||
                         "https://images.pexels.com/photos/270408/pexels-photo-270408.jpeg?auto=compress&cs=tinysrgb&w=1600"
                       }
                       alt={""}
@@ -82,12 +58,7 @@ const Orders = () => {
                     <strong>Price:</strong>
                     {item.price}
                   </p>
-                  <p>
-                    <strong>
-                      {currentUser?.isAuthor ? "Buyer" : "Author"}
-                    </strong>{" "}
-                    Maria Anders
-                  </p>
+
                   <div className="">
                     <AiFillMessage className="message" size={25} />
                   </div>

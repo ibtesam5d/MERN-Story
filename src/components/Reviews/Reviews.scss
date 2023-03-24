@@ -1,3 +1,4 @@
+$primary-color:#002451;
 .reviews {
     margin-top: 50px;
   
@@ -14,12 +15,21 @@
   
         input {
           padding: 20px;
+          @media screen and (max-width:425px){
+            
+            padding: 10px;
+          }
         }
   
         select {
           width: 200px;
           padding: 20px;
           align-self: flex-end;
+
+          @media screen and (max-width:425px){
+            width: 150px;
+            padding: 10px;
+          }
         }
         button {
           align-self: flex-end;
@@ -27,7 +37,7 @@
           border: none;
           padding: 10px;
           color: white;
-          background-color: #1dbf73;
+          background-color: $primary-color;
           cursor: pointer;
         }
       }

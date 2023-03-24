@@ -66,6 +66,11 @@ $primary-color:#002451;
             font-size: 14px;
             font-weight: 500;
           }
+
+          .contact-button{
+            color: black;
+            font-weight: 500;
+          }
   
           .stars {
             display: flex;
@@ -281,7 +286,7 @@ $primary-color:#002451;
           display: flex;
           justify-content: center;
           align-items: center;
-          button{
+          .pay-button{
             background-color: $primary-color;
             padding: 10px 30px;
             color: white;

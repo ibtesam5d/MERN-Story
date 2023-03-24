@@ -5,6 +5,8 @@ import { bookReducer, INITIAL_STATE } from "../../src/reducers/bookReducer";
 import newRequest from "../../src/utils/newRequest";
 import upload from "../../src/utils/uploadImage";
 import "./Add.scss";
+import { cards } from "../../data.js";
+
 const Add = () => {
   const [coverImg, setCoverImg] = useState(undefined);
   const [uploading, setUploading] = useState(false);
@@ -65,14 +67,13 @@ const Add = () => {
             <label htmlFor="">Category</label>
             <select name="category" id="category" onChange={handleChange}>
               <option value="">please select a category</option>
-              <option value="action" defaultValue={true}>
-                Action
-              </option>
-              <option value="drama">Drama</option>
-              <option value="mystery">Mystery</option>
-              <option value="comedy">Comedy</option>
-              <option value="romance">Romance</option>
-              <option value="sci-fi">Sci-fi</option>
+              {cards.map((item) => {
+                return (
+                  <option value={item.category} key={item.id}>
+                    {item.category}
+                  </option>
+                );
+              })}
             </select>
             <div className="images">
               <div className="imagesInputs">
@@ -112,29 +113,6 @@ const Add = () => {
             ></textarea>
             <button onClick={handleSubmit}>Create</button>
           </div>
-          {/* <div className="details">
-            <label htmlFor="">Service Title</label>
-            <input type="text" placeholder="e.g. One-page web design" />
-            <label htmlFor="">Short Description</label>
-            <textarea
-              name=""
-              id=""
-              placeholder="Short description of your service"
-              cols="30"
-              rows="10"
-            ></textarea>
-            <label htmlFor="">Delivery Time (e.g. 3 days)</label>
-            <input type="number" />
-            <label htmlFor="">Revision Number</label>
-            <input type="number" />
-            <label htmlFor="">Add Features</label>
-            <input type="text" placeholder="e.g. page design" />
-            <input type="text" placeholder="e.g. file uploading" />
-            <input type="text" placeholder="e.g. setting up a domain" />
-            <input type="text" placeholder="e.g. hosting" />
-            <label htmlFor="">Price</label>
-            <input type="number" />
-          </div> */}
         </div>
       </div>
     </div>

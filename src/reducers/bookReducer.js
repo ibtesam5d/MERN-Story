@@ -1,7 +1,7 @@
 import getCurentUser from "../utils/getCurrentUser";
 
 const currUserId = getCurentUser()?._id;
-console.log(currUserId);
+// console.log(currUserId);
 export const INITIAL_STATE = {
   userId: currUserId,
   title: "",

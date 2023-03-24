@@ -47,7 +47,7 @@ const Book = () => {
       ) : (
         <>
           <div className="page-title">
-            <span className="breadcrumbs">Story - Action -</span>
+            <span className="breadcrumbs">{`Story - ${data.category}`}</span>
 
             <h1>{data.title}</h1>
           </div>
@@ -88,8 +88,10 @@ const Book = () => {
                   alt={`${data.title} cover image`}
                 />
               </div>
+              {/* ======= ABOUT THIS BOOK ========= */}
               <h2>About This Book</h2>
               <p>{data.desc}</p>
+              {/* ======= ABOUT THE AUTHOR ========= */}
               <div className="seller">
                 <h2>About The Author</h2>
                 {isLoadingUser ? (
@@ -121,7 +123,7 @@ const Book = () => {
                           </div>
                         )}
 
-                        <button>Contact Me</button>
+                        <button className="contact-button">Contact Me</button>
                       </div>
                     </div>
                     <div className="box">
@@ -154,15 +156,19 @@ const Book = () => {
                 </div>
               </div>
               <div className="order-button">
-                {currentUser && (
-                  <button onClick={() => navigate(`/pay/${id}`)}>
+                {currentUser.isAuthor ? (
+                  <Link className="link pay-button" to={`/add`}>
+                    Create book
+                  </Link>
+                ) : (
+                  <Link className="link pay-button" to={`/pay/${id}`}>
                     Continue
-                  </button>
+                  </Link>
                 )}
                 {!currentUser && (
-                  <button onClick={() => navigate(`/login`)}>
+                  <Link className="link pay-button" to={"/login"}>
                     Please Login to Continue
-                  </button>
+                  </Link>
                 )}
               </div>
             </div>
