@@ -156,14 +156,16 @@ const Book = () => {
                 </div>
               </div>
               <div className="order-button">
-                {currentUser.isAuthor ? (
+                {currentUser?.isAuthor ? (
                   <Link className="link pay-button" to={`/add`}>
                     Create book
                   </Link>
                 ) : (
-                  <Link className="link pay-button" to={`/pay/${id}`}>
-                    Continue
-                  </Link>
+                  currentUser && (
+                    <Link className="link pay-button" to={`/pay/${id}`}>
+                      Continue
+                    </Link>
+                  )
                 )}
                 {!currentUser && (
                   <Link className="link pay-button" to={"/login"}>
