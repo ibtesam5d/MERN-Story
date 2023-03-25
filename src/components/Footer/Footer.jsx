@@ -1,11 +1,12 @@
 import React from "react";
-import "./Footer.scss";
+import "./footer.scss";
 import {
   BsFacebook,
   BsTwitter,
   BsInstagram,
   BsPinterest,
 } from "react-icons/bs";
+import { cards } from "../../../data";
 
 const Footer = () => {
   return (
@@ -15,15 +16,19 @@ const Footer = () => {
         <div className="top">
           <div className="item">
             <h2>Categories</h2>
-            <span>Action</span>
-            <span>Action</span>
-            <span>Action</span>
-            <span>Action</span>
-            <span>Action</span>
-            <span>Action</span>
-            <span>Action</span>
-            <span>Action</span>
-            <span>Action</span>
+            {cards.map((item) => {
+              return (
+                <span key={item.id}>
+                  <Link
+                    className="link"
+                    to={`/books?category=${item.category}`}
+                    key={item.id}
+                  >
+                    {item.category}
+                  </Link>
+                </span>
+              );
+            })}
           </div>
         </div>
         <hr />
