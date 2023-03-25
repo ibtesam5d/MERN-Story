@@ -15,19 +15,19 @@ import {
   Link,
   Outlet,
 } from "react-router-dom";
-import Home from "../pages/home/Home";
-import Add from "../pages/add/Add";
-import Book from "../pages/book/Book";
-import Books from "../pages/books/Books";
-import Login from "../pages/login/Login";
-import Message from "../pages/message/Message";
-import Messages from "../pages/messages/Messages";
-import Mybooks from "../pages/myBooks/Mybooks";
-import Orders from "../pages/orders/Orders";
-import Register from "../pages/register/Register";
+import Home from "./pages/home/Home";
+import Add from "./pages/add/Add";
+import Book from "./pages/book/Book";
+import Books from "./pages/books/Books";
+import Login from "./pages/login/Login";
+import Message from "./pages/message/Message";
+import Messages from "./pages/messages/Messages";
+import Mybooks from "./pages/myBooks/Mybooks";
+import Orders from "./pages/orders/Orders";
+import Register from "./pages/register/Register";
 import "../src/app.scss";
-import Pay from "../pages/pay/Pay";
-import Success from "../pages/success/Success";
+import Pay from "./pages/pay/Pay";
+import Success from "./pages/success/Success";
 
 function App() {
   const queryClient = new QueryClient();

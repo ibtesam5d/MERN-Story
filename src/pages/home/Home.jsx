@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
-import Featured from "../../src/components/Featured/Featured";
-import Slide from "../../src/components/Slide/Slide";
+import Featured from "../../components/Featured/Featured";
+import Slide from "../../components/Slide/Slide";
 import "./Home.scss";
-import Categorycard from "../../src/components/CategoryCard/Categorycard";
-import { cards, books } from "../../data";
+import Categorycard from "../../components/CategoryCard/Categorycard";
+import { cards, books } from "../../../data";
 import { BiCheckCircle } from "react-icons/bi";
-import BooksCard from "../../src/components/BooksCard/BooksCard";
+import BooksCard from "../../components/BooksCard/BooksCard";
 import { useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
-import newRequest from "../../src/utils/newRequest.js";
+import newRequest from "../../utils/newRequest.js";
 
 const Home = () => {
   const navigate = useNavigate();

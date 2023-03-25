@@ -3,7 +3,7 @@ import "./Orders.scss";
 import { AiFillMessage } from "react-icons/ai";
 import { MdDelete } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
-import newRequest from "../../src/utils/newRequest";
+import newRequest from "../../utils/newRequest";
 import { useQuery } from "@tanstack/react-query";
 // import OrderedBook from "../../src/components/OrderedBook/OrderedBook";
 

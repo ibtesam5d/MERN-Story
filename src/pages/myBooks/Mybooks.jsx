@@ -2,9 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Mybooks.scss";
 import { MdDelete } from "react-icons/md";
-import getCurentUser from "../../src/utils/getCurrentUser";
+import getCurentUser from "../../utils/getCurrentUser";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import newRequest from "../../src/utils/newRequest";
+import newRequest from "../../utils/newRequest";
 
 const Mybooks = () => {
   const currentUser = getCurentUser();
