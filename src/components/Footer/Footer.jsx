@@ -7,6 +7,7 @@ import {
   BsPinterest,
 } from "react-icons/bs";
 import { cards } from "../../../data";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
