@@ -50,9 +50,7 @@ const Books = () => {
           {all !== null ? `Story - ${all}` : `Story - ${category}`}
         </span>
         <h1>{all !== null ? all : category}</h1>
-        <p>
-          Explore the world of fights and dramas with story's action library
-        </p>
+        <p>Explore the world of fights and dramas with story's rich library</p>
         <div className="menu">
           <div className="left">
             <span>Price</span>

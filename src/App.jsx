@@ -52,6 +52,10 @@ function App() {
           element: <Home />,
         },
         {
+          path: "*",
+          element: <Home />,
+        },
+        {
           path: "/books",
           element: <Books />,
         },
