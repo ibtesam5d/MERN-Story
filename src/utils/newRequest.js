@@ -3,7 +3,7 @@ import axios from "axios";
 const getUser = JSON.parse(localStorage.getItem("currentUser"));
 const token = getUser?.token;
 const newRequest = axios.create({
-  baseURL: "http://localhost:8000/api/",
+  baseURL: "https://story-api.onrender.com/api/",
   headers: {
     Authorization: `Bearer ${token}`,
   },
