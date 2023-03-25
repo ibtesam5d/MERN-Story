@@ -28,6 +28,7 @@ import Register from "./pages/register/Register";
 import "../src/app.scss";
 import Pay from "./pages/pay/Pay";
 import Success from "./pages/success/Success";
+import Error from "./pages/Error/Error";
 
 function App() {
   const queryClient = new QueryClient();
@@ -46,7 +47,7 @@ function App() {
     {
       path: "/",
       element: <Layout />,
-      errorElement: <Home />,
+      errorElement: <Error />,
       children: [
         {
           path: "/",
@@ -99,13 +100,9 @@ function App() {
         },
         {
           path: "*",
-          element: <Home />,
+          element: <Error />,
         },
       ],
-    },
-    {
-      path: "*",
-      element: <Home />,
     },
   ]);
   return (
