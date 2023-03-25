@@ -52,10 +52,7 @@ function App() {
           path: "/",
           element: <Home />,
         },
-        {
-          path: "*",
-          element: <Home />,
-        },
+
         {
           path: "/books",
           element: <Books />,
@@ -100,7 +97,15 @@ function App() {
           path: "/success",
           element: <Success />,
         },
+        {
+          path: "*",
+          element: <Home />,
+        },
       ],
+    },
+    {
+      path: "*",
+      element: <Home />,
     },
   ]);
   return (
