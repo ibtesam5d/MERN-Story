@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Books.scss";
 import { BsChevronDown } from "react-icons/bs";
-import BookCard from "../../src/components/BookCard/BookCard";
+import BookCard from "../../components/BookCard/BookCard";
 import { useQuery } from "@tanstack/react-query";
-import newRequest from "../../src/utils/newRequest";
+import newRequest from "../../utils/newRequest";
 import { useLocation } from "react-router-dom";
 
 const Books = () => {

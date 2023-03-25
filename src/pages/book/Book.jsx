@@ -1,17 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Book.scss";
 import { Slider } from "infinite-react-carousel/lib";
 import { BsFillStarFill, BsCheckLg } from "react-icons/bs";
 import { GiTakeMyMoney } from "react-icons/gi";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
-import newRequest from "../../src/utils/newRequest";
-import Reviews from "../../src/components/Reviews/Reviews";
-import getCurentUser from "../../src/utils/getCurrentUser";
+import newRequest from "../../utils/newRequest";
+import Reviews from "../../components/Reviews/Reviews";
+import getCurentUser from "../../utils/getCurrentUser";
 
 const Book = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+  const [bought, setBought] = useState(false);
 
   const currentUser = getCurentUser();
 
@@ -37,6 +38,25 @@ const Book = () => {
       }),
     enabled: !!userId,
   });
+
+  const getOrderbyBook = async () => {
+    try {
+      const order = await newRequest.get(`/orders/${id}`);
+      const res = await order.data;
+      // console.log(res);
+      const buyer = res.map((item) => item.buyerId);
+      // console.log(buyer);
+      if (buyer.find((item) => item === currentUser._id)) {
+        setBought(true);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getOrderbyBook();
+  }, [currentUser]);
 
   return (
     <div className="book">
@@ -156,14 +176,18 @@ const Book = () => {
                 </div>
               </div>
               <div className="order-button">
-                {currentUser.isAuthor ? (
+                {currentUser?.isAuthor ? (
                   <Link className="link pay-button" to={`/add`}>
                     Create book
                   </Link>
+                ) : bought ? (
+                  <Link className="link pay-button">Write a review!</Link>
                 ) : (
-                  <Link className="link pay-button" to={`/pay/${id}`}>
-                    Continue
-                  </Link>
+                  currentUser && (
+                    <Link className="link pay-button" to={`/pay/${id}`}>
+                      Continue
+                    </Link>
+                  )
                 )}
                 {!currentUser && (
                   <Link className="link pay-button" to={"/login"}>

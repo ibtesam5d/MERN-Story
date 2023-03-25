@@ -1,11 +1,11 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import React, { useReducer, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { bookReducer, INITIAL_STATE } from "../../src/reducers/bookReducer";
-import newRequest from "../../src/utils/newRequest";
-import upload from "../../src/utils/uploadImage";
+import { bookReducer, INITIAL_STATE } from "../../reducers/bookReducer";
+import newRequest from "../../utils/newRequest";
+import upload from "../../utils/uploadImage";
 import "./Add.scss";
-import { cards } from "../../data.js";
+import { cards } from "../../../data";
 
 const Add = () => {
   const [coverImg, setCoverImg] = useState(undefined);
