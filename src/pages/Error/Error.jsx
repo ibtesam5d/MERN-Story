@@ -12,6 +12,7 @@ const Error = () => {
   }, []);
   return (
     <div>
+      <h1>Oops! Your requested page not found,</h1>
       <h1>Redirecting you to home-page</h1>
     </div>
   );
