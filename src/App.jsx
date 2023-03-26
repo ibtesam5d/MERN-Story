@@ -56,62 +56,53 @@ function App() {
         },
 
         {
-          path: "/books",
+          path: "books",
           element: <Books />,
           errorElement: <Error />,
         },
         {
-          path: "/book/:id",
+          path: "book/:id",
           element: <Book />,
           errorElement: <Error />,
         },
         {
-          path: "/orders",
+          path: "orders",
           element: <Orders />,
           errorElement: <Error />,
         },
         {
-          path: "/add",
+          path: "add",
           element: <Add />,
           errorElement: <Error />,
         },
         {
-          path: "/login",
+          path: "login",
           element: <Login />,
           errorElement: <Error />,
         },
+
         {
-          path: "/messages",
-          element: <Messages />,
-          errorElement: <Error />,
-        },
-        {
-          path: "/message/:id",
-          element: <Message />,
-          errorElement: <Error />,
-        },
-        {
-          path: "/my-books",
+          path: "my-books",
           element: <Mybooks />,
           errorElement: <Error />,
         },
         {
-          path: "/register",
+          path: "register",
           element: <Register />,
           errorElement: <Error />,
         },
         {
-          path: "/pay/:id",
+          path: "pay/:id",
           element: <Pay />,
           errorElement: <Error />,
         },
         {
-          path: "/success",
+          path: "success",
           element: <Success />,
           errorElement: <Error />,
         },
         {
-          path: "/*",
+          path: "*",
           element: <Error />,
         },
       ],
