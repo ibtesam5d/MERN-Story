@@ -56,11 +56,11 @@ const Navbar = () => {
           </Link>
           {currentUser?.isAuthor ? (
             <Link to="/" className="link">
-              Reader
-            </Link>
-          ) : currentUser !== undefined && currentUser?.isAuthor ? (
-            <Link to="/" className="link">
               Author
+            </Link>
+          ) : currentUser !== undefined && !currentUser?.isAuthor ? (
+            <Link to="/" className="link">
+              Reader
             </Link>
           ) : (
             <Link to="/books?all=all-book" className="link"></Link>

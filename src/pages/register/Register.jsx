@@ -23,7 +23,7 @@ const Register = () => {
       return { ...prev, [e.target.name]: e.target.value };
     });
 
-    console.log(user);
+    // console.log(user);
   };
 
   const handleAuthor = (e) => {

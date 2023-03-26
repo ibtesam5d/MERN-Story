@@ -23,7 +23,7 @@ const Add = () => {
     setUploading(true);
     try {
       const cover = await upload(coverImg);
-      console.log(cover);
+      // console.log(cover);
       setUploading(false);
       dispatch({ type: "ADD_COVER", payload: { cover } });
     } catch (error) {
@@ -49,7 +49,7 @@ const Add = () => {
     navigate("/my-books");
   };
 
-  console.log(state);
+  // console.log(state);
   return (
     <div className="add">
       <div className="container">
