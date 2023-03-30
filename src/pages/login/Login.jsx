@@ -17,6 +17,7 @@ const Login = () => {
       const res = await newRequest.post("/auth/login", { username, password });
       localStorage.setItem("currentUser", JSON.stringify(res.data));
       navigate("/");
+      navigate(0);
     } catch (error) {
       setError(error.response.data);
     }
