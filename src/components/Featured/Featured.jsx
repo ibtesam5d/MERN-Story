@@ -22,6 +22,7 @@ const Featured = () => {
             <div className="search-input">
               <BiSearch size={30} className="search-icon" />
               <input
+                title="text-input"
                 type="text"
                 placeholder="Try 'comedy'"
                 onChange={(e) => setInput(e.target.value)}

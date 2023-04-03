@@ -43,16 +43,19 @@ const Navbar = () => {
   };
 
   return (
-    <div className={active || pathname !== "/" ? "navbar active" : "navbar"}>
+    <div
+      className={active || pathname !== "/" ? "navbar active" : "navbar"}
+      title="Nav"
+    >
       <div className="container">
         <div className="logo">
-          <Link to={"/"} className="link">
+          <Link to={"/"} className="link" data-testId="nav-visible">
             <span className="text">story</span>
           </Link>
           <span className="dot">.</span>
         </div>
         <div className="links">
-          <Link className="link" to="/">
+          <Link className="link" to="/" data-testId="nav-visible">
             Home
           </Link>
           {currentUser?.isAuthor ? (
@@ -94,10 +97,10 @@ const Navbar = () => {
             </div>
           ) : (
             <>
-              <Link to="/login" className="link">
+              <Link to="/login" className="link" data-testId="nav-visible">
                 Sign In
               </Link>
-              <Link to="/register" className="link">
+              <Link to="/register" className="link" data-testId="nav-visible">
                 <button>Join</button>
               </Link>
             </>
