@@ -47,3 +47,21 @@ it("should show welcome image", () => {
   const images = screen.getAllByRole("img");
   expect(images[0].src).toEqual("http://localhost:3000/images/abook.svg");
 });
+
+it("should show both feature image with correct src", () => {
+  const queryClient = new QueryClient();
+  const route = "/";
+  render(
+    <QueryClientProvider client={queryClient}>
+      <MemoryRouter initialEntries={[route]}>
+        <Home />
+      </MemoryRouter>
+    </QueryClientProvider>
+  );
+  const featureImg1 = screen.getByTitle("feature-1st");
+  const featureImg2 = screen.getByTitle("feature-2nd");
+  expect(featureImg1.src).toEqual("http://localhost:3000/images/tackle.svg");
+  expect(featureImg2.src).toEqual("http://localhost:3000/images/never.svg");
+  expect(featureImg1).toBeVisible();
+  expect(featureImg2).toBeVisible();
+});

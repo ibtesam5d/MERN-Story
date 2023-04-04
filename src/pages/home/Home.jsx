@@ -73,6 +73,7 @@ const Home = () => {
           {/* right */}
           <div className="right">
             <img
+              title="feature-1st"
               src="/images/tackle.svg"
               alt="features image saying never stop reading"
             />
@@ -112,6 +113,7 @@ const Home = () => {
           {/* right */}
           <div className="right">
             <img
+              title="feature-2nd"
               src="/images/never.svg"
               alt="features image saying never stop reading"
             />
