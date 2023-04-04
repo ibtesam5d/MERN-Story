@@ -1,4 +1,10 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import {
+  fireEvent,
+  getByTitle,
+  render,
+  screen,
+  waitFor,
+} from "@testing-library/react";
 import { expect, it } from "vitest";
 import Featured from "./Featured";
 import { MemoryRouter } from "react-router-dom";

@@ -44,7 +44,7 @@ const Books = () => {
   };
 
   return (
-    <div className="books">
+    <div className="books" title="books">
       <div className="container">
         <span className="breadcrumbs">
           {all !== null ? `Story - ${all}` : `Story - ${category}`}

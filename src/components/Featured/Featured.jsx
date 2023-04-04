@@ -28,7 +28,9 @@ const Featured = () => {
                 onChange={(e) => setInput(e.target.value)}
               />
             </div>
-            <button onClick={handleSubmit}>Search</button>
+            <button onClick={handleSubmit} title="search">
+              Search
+            </button>
           </div>
           <div className="popular">
             <span>Popular:</span>

@@ -10,7 +10,7 @@ const Slide = ({
   centerMode,
 }) => {
   return (
-    <div className="slide">
+    <div className="slide" data-testId="slide">
       <div className="sliderContainer">
         <Slider
           slidesToShow={slidesToShow}
