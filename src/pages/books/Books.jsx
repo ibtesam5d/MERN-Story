@@ -49,13 +49,23 @@ const Books = () => {
         <span className="breadcrumbs">
           {all !== null ? `Story - ${all}` : `Story - ${category}`}
         </span>
-        <h1>{all !== null ? all : category}</h1>
+        <h1 data-testId="h1">{all !== null ? all : category}</h1>
         <p>Explore the world of fights and dramas with story's rich library</p>
         <div className="menu">
           <div className="left">
             <span>Price</span>
-            <input ref={minRef} type="text" placeholder="min" />
-            <input ref={maxRef} type="text" placeholder="max" />
+            <input
+              ref={minRef}
+              type="text"
+              placeholder="min"
+              data-testId="min"
+            />
+            <input
+              ref={maxRef}
+              type="text"
+              placeholder="max"
+              data-testId="max"
+            />
             <button onClick={apply}>Apply</button>
           </div>
           <div className="right">
@@ -78,7 +88,7 @@ const Books = () => {
         </div>
 
         {/* ====== BOOKS ======== */}
-        <div className="cards">
+        <div className="cards" data-testId="book-card">
           {isLoading
             ? "Loading.."
             : error
