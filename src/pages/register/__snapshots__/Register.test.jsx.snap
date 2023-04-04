@@ -1,0 +1,270 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`should match snapshot 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="register"
+      >
+        <h1>
+          Create a new account
+        </h1>
+        <form>
+          <div
+            class="left"
+          >
+            <label
+              for=""
+            >
+              Username
+            </label>
+            <input
+              name="username"
+              placeholder="johndoe"
+              type="text"
+            />
+            <label
+              for=""
+            >
+              Email
+            </label>
+            <input
+              name="email"
+              placeholder="email"
+              type="email"
+            />
+            <label
+              for=""
+            >
+              Password
+            </label>
+            <input
+              name="password"
+              type="password"
+            />
+            <label
+              for=""
+            >
+              Profile Picture
+            </label>
+            <input
+              type="file"
+            />
+            <button
+              type="submit"
+            >
+              Register
+            </button>
+          </div>
+          <div
+            class="right"
+          >
+            <h2>
+              I want to become an author
+            </h2>
+            <div
+              class="toggle"
+            >
+              <label
+                for=""
+              >
+                Activate the author account
+              </label>
+              <label
+                class="switch"
+              >
+                <input
+                  type="checkbox"
+                />
+                <span
+                  class="slider round"
+                />
+              </label>
+            </div>
+            <label
+              for=""
+            >
+              Phone Number
+            </label>
+            <input
+              name="phone"
+              placeholder="+1 234 567 89"
+              type="text"
+            />
+            <label
+              for=""
+            >
+              Description
+            </label>
+            <textarea
+              cols="30"
+              id=""
+              name="desc"
+              placeholder="A short description of yourself"
+              rows="10"
+            />
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="register"
+    >
+      <h1>
+        Create a new account
+      </h1>
+      <form>
+        <div
+          class="left"
+        >
+          <label
+            for=""
+          >
+            Username
+          </label>
+          <input
+            name="username"
+            placeholder="johndoe"
+            type="text"
+          />
+          <label
+            for=""
+          >
+            Email
+          </label>
+          <input
+            name="email"
+            placeholder="email"
+            type="email"
+          />
+          <label
+            for=""
+          >
+            Password
+          </label>
+          <input
+            name="password"
+            type="password"
+          />
+          <label
+            for=""
+          >
+            Profile Picture
+          </label>
+          <input
+            type="file"
+          />
+          <button
+            type="submit"
+          >
+            Register
+          </button>
+        </div>
+        <div
+          class="right"
+        >
+          <h2>
+            I want to become an author
+          </h2>
+          <div
+            class="toggle"
+          >
+            <label
+              for=""
+            >
+              Activate the author account
+            </label>
+            <label
+              class="switch"
+            >
+              <input
+                type="checkbox"
+              />
+              <span
+                class="slider round"
+              />
+            </label>
+          </div>
+          <label
+            for=""
+          >
+            Phone Number
+          </label>
+          <input
+            name="phone"
+            placeholder="+1 234 567 89"
+            type="text"
+          />
+          <label
+            for=""
+          >
+            Description
+          </label>
+          <textarea
+            cols="30"
+            id=""
+            name="desc"
+            placeholder="A short description of yourself"
+            rows="10"
+          />
+        </div>
+      </form>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
