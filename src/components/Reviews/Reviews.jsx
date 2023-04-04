@@ -52,6 +52,11 @@ const Reviews = ({ bookId }) => {
           <p style={{ color: `red` }}>Sorry, author can't post reviews</p>
         )}
         <form action="" className="addForm" onSubmit={handleSubmit}>
+          {!currentUser && (
+            <Link className="link pay-button" to={"/login"}>
+              Please Login to Continue
+            </Link>
+          )}
           <input type="text" placeholder="write your opinion" />
           <select name="" id="">
             <option value={1}>1</option>
