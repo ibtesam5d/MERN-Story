@@ -4,6 +4,7 @@ import getCurentUser from "../../utils/getCurrentUser";
 import newRequest from "../../utils/newRequest";
 import Review from "../Review/Review";
 import "./Reviews.scss";
+import { Link } from "react-router-dom";
 
 const Reviews = ({ bookId }) => {
   const currentUser = getCurentUser();

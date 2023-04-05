@@ -30,7 +30,7 @@ const Mybooks = () => {
     mutation.mutate(id);
   };
 
-  console.log(data);
+  // console.log(data);
 
   return (
     <div className="myBooks">
